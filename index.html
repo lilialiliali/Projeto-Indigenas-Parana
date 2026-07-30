@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Povos Indígenas no Paraná: História, Cultura e Resistência</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================
+           VARIÁVEIS DE DESIGN E CORES (Estilo Canva Moderno)
+           ========================================================== */
+        :root {
+            --bg-primary: #fbf9f5;
+            --bg-card: #ffffff;
+            --text-dark: #1f2923;
+            --text-muted: #57655d;
+            --accent-green: #2d5a3e;
+            --accent-green-light: #eaf1ec;
+            --accent-terracotta: #c85a32;
+            --accent-terracotta-light: #fbeee8;
+            --accent-gold: #d4a373;
+            --border-color: #e5e0d8;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.06);
+            --radius-lg: 20px;
+            --radius-md: 12px;
+        }
+
+        /* Resets Básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+        }
+
+        /* ==========================================================
+           BARRA DE AUTORIA FIXA / CABEÇALHO (NO CANTO DA PÁGINA)
+           ========================================================== */
+        .authors-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent-gold);
+            border-left: 4px solid var(--accent-terracotta);
+            padding: 12px 18px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            max-width: 320px;
+        }
+
+        .authors-badge strong {
+            display: block;
+            color: var(--accent-terracotta);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        /* ==========================================================
+           HERO SECTION / BANNER PRINCIPAL
+           ========================================================== */
+        .hero {
+    background: linear-gradient(135deg, rgba(45, 90, 62, 0.35), rgba(28, 56, 39, 0.40)),
+                url('https://www.parana.pr.gov.br/sites/default/arquivos_restritos/files/imagem/2023-11/indigenas_piraquara_foto_rdziura-0316.jpg') center/cover;
+    color: #ffffff;
+    padding: 120px 20px 90px 20px;
+    text-align: center;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: var(--shadow-md);
+}
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #e0eadd;
+            font-weight: 300;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================
+           NAVEGAÇÃO RÁPIDA (SUMÁRIO)
+           ========================================================== */
+        .nav-container {
+            max-width: 1100px;
+            margin: -30px auto 50px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-menu {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-terracotta);
+        }
+
+        /* ==========================================================
+           CONTAINER PRINCIPAL E SEÇÕES
+           ========================================================== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 80px 20px;
+        }
+
+        .section-block {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 45px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            border-bottom: 2px solid var(--accent-green-light);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-number {
+            background: var(--accent-terracotta-light);
+            color: var(--accent-terracotta);
+            font-weight: 800;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.1rem;
+            color: var(--accent-green);
+        }
+
+        /* Grids de Informação */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .info-card {
+            background: var(--bg-primary);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .info-card.terracotta {
+            border-left-color: var(--accent-terracotta);
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .img-box {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin: 20px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Highlight de Destaque */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--accent-green-light), #f0f7f2);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            margin: 25px 0;
+            border: 1px solid #d2e3d7;
+        }
+
+        .highlight-box h3 {
+            color: var(--accent-green);
+            margin-bottom: 12px;
+        }
+
+        /* Seção Específica de Palmital */
+        .palmital-special {
+            background: linear-gradient(135deg, #fffcf7, #f7efe5);
+            border: 2px solid var(--accent-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .palmital-special::before {
+            content: "DESTAQUE REGIONAL";
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: var(--accent-gold);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        /* Fontes e Citações */
+        .sources-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sources-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .sources-list a {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: #a3b1a8;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .authors-badge {
+                position: static;
+                margin: 20px auto;
+                max-width: 90%;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .section-block {
+                padding: 25px;
+            }
+            
+            .img-box {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="authors-badge">
+        <strong>Projeto Escolar • 1° Ano A</strong>
+        Feito por: Alissa, Giovana, Kethly, Hemily e Emily C.
+    </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Memória & Identidade</span>
+            <h1>Os Povos Indígenas no Paraná</h1>
+            <p>Um levantamento abrangente sobre a ancestralidade, tradições, territorialidade e a presença viva das etnias indígenas na história e no cotidiano paranaense.</p>
+        </div>
+    </header>
+
+    <div class="nav-container">
+        <nav class="nav-menu">
+            <a href="#origens">1. Origens e Etnias</a>
+            <a href="#cultura">2. Cultura e Costumes</a>
+            <a href="#palmital">3. Região de Palmital</a>
+            <a href="#influencia">4. Legado e Influência</a>
+            <a href="#fontes">5. Fontes</a>
+        </nav>
+    </div>
+
+    <main class="container">
+
+        <section id="origens" class="section-block">
+            <div class="section-header">
+                <span class="section-number">SEÇÃO 01</span>
+                <h2>Origens e Chegada das Etnias ao Estado</h2>
+            </div>
+            
+            <p>A presença indígena no território que hoje compõe o estado do Paraná antecede em milhares de anos a formação das fronteiras políticas e a chegada dos colonizadores europeus. O território paranaense é historicamente ponto de convergência de dois grandes troncos linguísticos e culturais: o <strong>Macro-Jê</strong> e o <strong>Tupi-Guarani</strong>.</p>
+            
+            <img class="img-box" src="https://curitibadegraca.com.br/wp-content/uploads/2019/04/Grupo_Tow_Fulni_Foto_Kraw_Penas_SEEC.jpg" alt="Grupo indígena no Paraná">
+
+            <div class="grid-3">
+                <div class="info-card">
+                    <h3>Povo Kaingang</h3>
+                    <p>Pertencentes ao tronco Macro-Jê, os Kaingang habitam as regiões de planalto e matas de araucária há mais de 3.000 anos. Eram originariamente seminômades, deslocando-se em consonância com os ciclos naturais de maturação do pinhão e caça.</p>
+                </div>
+                <div class="info-card terracotta">
+                    <h3>Povo Guarani</h3>
+                    <p>Do tronco Tupi-Guarani (subdivididos em Nhandeva e Mbyá), os Guarani possuem uma visão de mundo fortemente ancorada na busca da <em>Yvy Marãe'ỹ</em> (a "Terra sem Males"). Historicamente ocupavam o litoral e as margens dos grandes rios como o Paraná e o Iguaçu.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Etnias Xetá e Xokleng</h3>
+                    <p>Os Xetá habitaram historicamente a região da Serra dos Dourados e foram vítimas de um grave processo de desterro e desestruturação no século XX. Já os Xokleng mantêm laços históricos com as terras do sul do estado e do planalto paranaense.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cultura" class="section-block">
+            <div class="section-header">
+                <span class="section-number">SEÇÃO 02</span>
+                <h2>Cultura, Costumes e Visão de Mundo</h2>
+            </div>
+
+            <p>As sociedades indígenas possuem complexas estruturas sociais, religiosas e tecnológicas adaptadas aos biomas paranaenses (Mata Atlântica e Floresta de Araucárias).</p>
+
+            <div class="grid-2">
+                <div>
+                    <h3>A Estrutura Metádica Kaingang</h3>
+                    <p>A sociedade Kaingang organiza-se tradicionalmente a partir de duas metades exogâmicas opostas e complementares: os <strong>Kamé</strong> (associados ao sol, marcas compridas e traços marcantes) e os <strong>Kairu</strong> (associados à lua, marcas redondas e sombras). Os casamentos ocorrem obrigatoriamente entre membros de metades opostas.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Liderança Espiritual: Os Kuiã</h3>
+                        <p>Entre os Kaingang, os pajés ou xamãs são chamados de <em>Kuiã</em>. Eles são detentores de saberes botânicos e espirituais, utilizando plantas medicinais e guiando a comunidade através do contato com os espíritos da natureza.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Artesanato, Alimentação e Rituais</h3>
+                    <p>A cultura material indígena é rica em detalhes:</p>
+                    <ul style="margin-left: 20px; color: var(--text-muted);">
+                        <li><strong>Cestaria Kaingang:</strong> Feita de taquara, trançada com grafismos geométricos que indicam a metade social (Kamé ou Kairu).</li>
+                        <li><strong>Alimentação Tradicional:</strong> Coleta do pinhão, cultivo do milho tradicional, mandioca, abóbora e o preparo de bebidas fermentadas (como a <em>Kiki</em> ou chicha).</li>
+                        <li><strong>Cânticos Guarani:</strong> A música Guarani possui caráter divino e meditativo, executada nas casas de reza (<em>Opy</em>).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="palmital" class="section-block palmital-special">
+            <div class="section-header">
+                <span class="section-number" style="background: var(--accent-gold); color: #fff;">ESTUDO LOCAL</span>
+                <h2>Os Indígenas na Região de Palmital e Entorno</h2>
+            </div>
+
+            <p>A região do município de <strong>Palmital</strong>, localizada no Centro-Sul Paranaense, está inserida em uma das zonas de ocupação Kaingang e Guarani mais expressivas do estado, próxima à grande bacia do Rio Piquiri e ao complexo territorial de Nova Laranjeiras e Pitanga.</p>
+
+            <div class="grid-2">
+                <div class="info-card" style="background: #ffffff;">
+                    <h3>Histórico de Ocupação e Território</h3>
+                    <p>O planalto de Palmital e municípios vizinhos (como Pitanga, Laranjeiras do Sul e Nova Laranjeiras, onde se localiza a expressiva <strong>Terra Indígena Rio das Cobras</strong>) forma um corredor histórico de trânsito ancestral. As florestas nativas e os rios locais forneciam recursos cruciais para a subsistência dessas comunidades.</p>
+                </div>
+                <div class="info-card terracotta" style="background: #ffffff;">
+                    <h3>Desafios Contemporâneos na Região</h3>
+                    <p>Com o avanço da fronteira agrícola no século XX, os povos da região enfrentaram o confinamento territorial. Atualmente, os indígenas residentes na região de Palmital e arredores atuam ativamente na preservação de suas nascentes, na produção de artesanato e no fortalecimento de brigadas de prevenção ambiental.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(255, 255, 255, 0.8);">
+                <h3 style="color: var(--accent-terracotta);">Importância do Ecoturismo e Educação Local</h3>
+                <p>Na região de Palmital e municípios adjacentes, escolas locais e lideranças indígenas promovem feiras culturais e intercâmbios escolares para combater o preconceito, reforçando a valorização dos saberes tradicionais, da língua Kaingang e da proteção das matas de galeria da região.</p>
+            </div>
+        </section>
+
+        <section id="influencia" class="section-block">
+            <div class="section-header">
+                <span class="section-number">SEÇÃO 04</span>
+                <h2>Herança Cultural no Paraná Atual</h2>
+            </div>
+
+            <p>A cultura indígena permeia profundamente a identidade diária do povo paranaense, influenciando o vocabulário, a gastronomia, a medicina popular e o manejo sustentável do meio ambiente.</p>
+
+            <div class="grid-3">
+                <div class="info-card">
+                    <h3>Toponímia (Nomes de Lugares)</h3>
+                    <p>Cidades e rios paranaenses carregam nomes indígenas: <strong>Paraná</strong> ("grande rio"), <strong>Curitiba</strong> ("lugar de muitos pinhões/pinheiros"), <strong>Iguaçu</strong> ("água grande"), <strong>Tibagi</strong>, <strong>Piquiri</strong> e <strong>Arapongas</strong>.</p>
+                </div>
+                <div class="info-card terracotta">
+                    <h3>Culinária Regional</h3>
+                    <p>O hábito de consumir o <strong>pinhão</strong> assado ou cozido, o uso da chimia, da farinha de mandioca e do chá de erva-mate (<em>Chimarrão</em>) foram herdados diretamente das práticas indígenas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Preservação da Biodiversidade</h3>
+                    <p>As Terras Indígenas no Paraná funcionam hoje como verdadeiras "ilhas de preservação verde", mantendo de pé trechos cruciais da Mata Atlântica e das Florestas de Araucárias no estado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fontes" class="section-block">
+            <div class="section-header">
+                <span class="section-number">SEÇÃO 05</span>
+                <h2>Fontes Históricas e Bibliografia</h2>
+            </div>
+
+            <p>Para a elaboração deste estudo, foram consultadas fontes institucionais, acadêmicas e órgãos oficiais de proteção aos direitos indígenas:</p>
+
+            <ul class="sources-list" style="margin-top: 15px;">
+                <li>• <strong>FUNAI (Fundação Nacional dos Povos Indígenas):</strong> Dados sobre terras e terras demarcadas no Paraná.</li>
+                <li>• <strong>Instituto Socioambiental (ISA) - Povos Indígenas no Brasil:</strong> Levantamento etnográfico dos povos Kaingang, Guarani e Xetá.</li>
+                <li>• <strong>IBGE (Instituto Brasileiro de Geografia e Estatística):</strong> Censo Demográfico sobre a população indígena paranaense.</li>
+                <li>• <strong>Secretaria da Educação do Estado do Paraná (SEED-PR):</strong> Cadernos pedagógicos sobre História e Cultura Afro-Brasileira e Indígena.</li>
+                <li>• <strong>Estudos Regionais do Centro-Sul Paranaense:</strong> Documentações históricas sobre a bacia dos rios Piquiri e Rio das Cobras (Regiões de Palmital, Nova Laranjeiras e Pitanga).</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Projeto de Pesquisa Escolar sobre os Povos Indígenas do Paraná</p>
+        <p style="margin-top: 5px; color: var(--accent-gold);">Desenvolvido por: Alissa, Giovana, Kethly, Hemily e Emily C. — Turma: 1° A</p>
+    </footer>
+
+</body>
+</html>
